@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Арт-ярмарка – Как добраться и безопасность</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f5f0;  /* тёплый оттенок галерейной бумаги */
+      font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      color: #1e1b1a;
+      line-height: 1.4;
+      padding: 20px 16px 48px 16px;
+    }
+
+    /* основной контейнер – дружелюбный к телефонам */
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* стиль карточки */
+    .card {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 1.5rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.03);
+      border: 1px solid #eae7e0;
+    }
+
+    /* заголовки */
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+      color: #1f2a1e;
+    }
+
+    .subhead {
+      font-size: 0.9rem;
+      color: #6b6258;
+      border-left: 3px solid #b8a99a;
+      padding-left: 0.75rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #2c3a2b;
+    }
+
+    h2 i {
+      font-style: normal;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 1rem 0 0.6rem 0;
+      color: #4a3f36;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* детали локации */
+    .venue-address {
+      background: #fefaf5;
+      padding: 1rem;
+      border-radius: 24px;
+      margin: 1rem 0 0.5rem 0;
+      border: 1px solid #f0e4d8;
+    }
+
+    .address-line {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .direction-text {
+      color: #2c553c;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      border-left: 2px solid #cdbcac;
+    }
+
+    /* сообщение о насекомых – мягкое предупреждение */
+    .safety-box {
+      background: #fef8e7;
+      border-left: 5px solid #daa520;
+      border-radius: 24px;
+      padding: 1rem 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .insect-icon {
+      font-size: 1.5rem;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .safety-message strong {
+      color: #b45f1b;
+    }
+
+    .dress-tip {
+      background: #eef4ea;
+      border-radius: 28px;
+      padding: 0.5rem 1rem;
+      margin-top: 0.8rem;
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* РАСПИСАНИЕ – адаптивная таблица */
+    .timetable {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .timetable th, .timetable td {
+      text-align: left;
+      padding: 14px 8px;
+      border-bottom: 1px solid #e9e2d9;
+    }
+
+    .timetable th {
+      font-weight: 600;
+      color: #6c4f34;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      width: 38%;
+    }
+
+    .timetable td {
+      color: #2a2a28;
+      font-weight: 470;
+    }
+
+    .tag {
+      background: #e7dfd5;
+      padding: 2px 8px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-left: 6px;
+      color: #4a3b2e;
+    }
+
+    .note {
+      font-size: 0.75rem;
+      color: #8e7c6b;
+      margin-top: 0.7rem;
+      text-align: center;
+      background: #f7f3ed;
+      padding: 0.5rem;
+      border-radius: 28px;
+    }
+
+    hr {
+      margin: 20px 0 8px 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, #e0d6cc, transparent);
+    }
+
+    .footer-note {
+      font-size: 0.7rem;
+      text-align: center;
+      color: #b2a086;
+      margin-top: 1.2rem;
+    }
+
+    a {
+      color: #4f6b3c;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  
+  <!-- Шапка / Заголовок -->
+  <div style="margin-bottom: 1rem;">
+    <h1>◈ СОВРЕМЕННАЯ<br>АРТ-ЯРМАРКА</h1>
+    <div class="subhead">Выставочный павильон · 13-й сезон</div>
+  </div>
+
+  <!-- 1. МЕСТО ПРОВЕДЕНИЯ + КАК ДОБРАТЬСЯ -->
+  <div class="card">
+    <h2>
+      <i>📍</i> Как добраться
+    </h2>
+    <div class="venue-address">
+      <div class="address-line">
+        <span>🏛️</span> <strong>Выставочный зал «Ривервью»</strong>
+      </div>
+      <div style="font-size: 0.9rem; color: #4b3f35; margin-bottom: 0.6rem;">
+        наб. Квей-Артс, 45, Ист-Риверсайд,<br>
+        Лондон, SE1 9TG
+      </div>
+      <div class="direction-text">
+        <strong>🚇 Как добраться до места:</strong><br>
+        • <strong>Метро:</strong> линия Jubilee → станция «Canary Gate» (выход 4), 6 минут пешком по набережной.<br>
+        • <strong>Автобус:</strong> маршруты 47, 188, N1, остановка «Art Pavilion» прямо напротив входа.<br>
+        • <strong>Речной трамвай:</strong> Uber Boat by Thames Clippers – причал «Museum Quay», 3 минуты пешком.<br>
+        • <strong>Велосипед / пешком:</strong> указатели «Art Fair →» от главной площади. Бесплатная парковка для велосипедов у южного входа.<br>
+        • <strong>Авто / такси:</strong> зона высадки на Riverside Approach. Платная парковка Q-Park Gallery Lane (5 минут пешком).
+      </div>
+    </div>
+    <div style="margin-top: 0.75rem; font-size: 0.85rem; background: #f2efe8; border-radius: 20px; padding: 0.5rem 0.8rem;">
+      🎟️ <strong>Доступность:</strong> безбарьерный вход, доступно для инвалидных колясок, тихие часы ежедневно с 10:00 до 11:00.
+    </div>
+  </div>
+
+  <!-- 2. СООБЩЕНИЕ О БЕЗОПАСНОСТИ (ДРЕСС-КОД ОТ НАСЕКОМЫХ) -->
+  <div class="card">
+    <h2>
+      <i>🦟</i> Безопасность и дресс-код
+    </h2>
+    <div class="safety-box">
+      <div style="display: flex; gap: 8px; align-items: flex-start;">
+        <span class="insect-icon">⚠️</span>
+        <div class="safety-message">
+          <strong>Внимание: насекомые в саду и на скульптурной террасе</strong><br>
+          Ярмарка включает открытые инсталляции и зелёные дворики. В весенне-летний период <strong>комары, мошки и мокрецы</strong> активны вблизи водоёмов и растений.
+        </div>
+      </div>
+      <div class="dress-tip">
+        🌿 <strong>Рекомендуемый дресс-код для комфорта и защиты:</strong> лёгкие длинные рукава, дышащие брюки или макси-юбка, закрытая обувь. Избегайте насыщенных цветочных ароматов (привлекают насекомых). 
+        На стойке информации можно взять <strong>натуральные салфетки-репелленты</strong>.
+      </div>
+      <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #8b694a;">
+        🧴 <strong>Совет:</strong> персонал ярмарки подскажет, где находятся закрытые галереи с кондиционированием, если вы чувствительны к насекомым. Также рекомендуем светлые оттенки (хаки, бежевый, пастельные тона) – они меньше привлекают мошек.
+      </div>
+    </div>
+    <div style="font-size: 0.8rem; margin-top: 1rem; background: #eef1e6; border-radius: 20px; padding: 0.6rem; text-align: center;">
+      🌸 При сильной аллергии антигистаминные препараты можно получить в медпункте (зал B, рядом с санузлами).
+    </div>
+  </div>
+
+  <!-- 3. РАСПИСАНИЕ -->
+  <div class="card">
+    <h2>
+      <i>⏳</i> Расписание ярмарки
+    </h2>
+    <table class="timetable">
+      <thead>
+        <tr>
+          <th>ДЕНЬ / ДАТА</th>
+          <th>ПРОГРАММА И АКЦЕНТЫ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Пятница, 12 сентября</strong><br><span style="font-size:0.7rem;">Открытие</span></td>
+          <td>✨ 18:00 – 22:00 <br> Вернисаж (по приглашениям, ранний доступ) <br> <span class="tag">DJ-сет</span> <span class="tag">Шампанское</span></td>
+        </tr>
+        <tr>
+          <td><strong>Суббота, 13 сентября</strong></td>
+          <td>11:00 – 20:00 <br> ⌂ Лекция куратора: 14:30 <br> 🎨 Живая демонстрация живописи (16:00) <br> 🍽️ Работает фуд-корт</td>
+        </tr>
+        <tr>
+          <td><strong>Воскресенье, 14 сентября</strong></td>
+          <td>10:00 – 18:00 <br> 🧒 Семейный час (10–12) <br> 🎤 Дискуссия художников: 15:00 <br> 🕯️ Закрытие с фуршетом в 17:00</td>
+        </tr>
+        <tr style="background:#fdfaf5;">
+          <td><strong>Понедельник, 15 сентября</strong></td>
+          <td>10:00 – 16:00 <br> 📖 Презентации арт-книг <br> 🎟️ Последний день просмотра – скидка 40% на каталог</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- дополнительные детали по расписанию -->
+    <div style="margin-top: 1rem;">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 0.8rem;">
+        <div><span>🎧</span> Экскурсии с гидом: 12:00 и 17:00 ежедневно</div>
+        <div><span>☕</span> Кофейня открыта с 9:30</div>
+      </div>
+    </div>
+    <div class="note">
+      ⏰ * Последний вход за 45 минут до закрытия. Расписание может незначительно меняться — уточняйте на цифровых экранах у входа.
+    </div>
+  </div>
+  
+  <!-- дополнительный мини-блок: напоминание о насекомых + карта -->
+  <div style="background: #f4efe7; border-radius: 28px; padding: 0.9rem 1rem; margin-top: 0.2rem;">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <span>📱</span> <span style="font-weight: 500;">Интерактивная карта залов</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <span>🦟</span> <span style="font-weight: 500;">Салфетки от насекомых → вход в зал A</span>
+      </div>
+    </div>
+    <hr>
+    <div style="font-size: 0.75rem; text-align: center; margin-top: 6px;">
+      📍 Актуальные новости о транспорте: подписывайтесь на <strong>@contemporaryartfair</strong> или обратитесь к инфостойке. 
+      Одевайтесь слоями для переходов между улицей и помещением — это позволит чувствовать себя комфортно.
+    </div>
+  </div>
+  
+  <div class="footer-note">
+    современная арт-ярмарка — выставочный центр riverview | безопасность прежде всего, наслаждайтесь искусством
+  </div>
+</div>
+</body>
+</html>
